@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Base</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav_container">
+            <ul class="navbar_list">
+                <a class="navbar_link" href="{% url 'index' %}"><li>Главная</li></a>
+                <a class="navbar_link" href="{% url 'index'%}"><li>Портфолио</li></a>
+                <li class="navbar_link material">Методические материалы
+                    <ul class="navbar_slist">
+                        <a class="navbar_link" href="{% url 'type' 'L' %}"><li>Лекционые материалы</li></a>
+                        <a class="navbar_link" href="{% url 'type' 'E' %}"><li>Для подготовки к экзаменам</li></a>
+                        <a class="navbar_link" href="{% url 'type' 'O' %}"><li>Другое</li></a>
+                    </ul>
+                </li>
+                            
+                <a class="navbar_link" href="{% url 'index'%}"><li>Воспитательная деятельность</li></a>
+                <a class="navbar_link" href="{% url 'index'%}"><li>Блог</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+</body>
+</html>

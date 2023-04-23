@@ -1,0 +1,17 @@
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% block body_block %}
+<div>
+    <h1>Лекционные материалы:</h1>
+    <table>
+        <tbody>
+            {% for mat in object_list %}
+            <tr>
+                <td><a href="{{mat.file}}">{{mat.title}}</a></td>
+                <td>{{mat.data}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
